@@ -1,0 +1,86 @@
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+body { padding: 0px; margin: 0px; }
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px auto;
+}
+video {
+    width: 100%;
+    height: auto;
+}
+
+#clock {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+}
+
+span {
+    margin-top: -24px;
+    font-size: 100px;
+    margin-left: 50px;
+    color: mintcream;
+    font-family: 'Galmuri14';
+}
+
+
+#mons {
+    margin-top: 10%;
+}
+
+.hp-bar {
+    position: relative;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+    width: 420px;
+    top: 5px;
+    left: 39%;
+}
+  
+.hp-bar-inner {
+    background-color: green;
+    height: 100%;
+    transition: width 0.5s;
+}
+
+.Main{
+    position: static;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    position: relative;
+    top: 50px;
+    left: 45%;
+}
+
+#mon {
+    position: relative;
+    left: 47%;
+}
+
+.user-hp {
+    position: relative;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+    width: 420px;
+    top: 180px;
+    left: 39%;
+}
+
+.userhp-bar {
+    background-color: green;
+    height: 100%;
+    transition: width 0.5s;
+}
