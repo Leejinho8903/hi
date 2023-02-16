@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Main</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/Lonely/assets/css/style1.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css">
+    </head>
+    <body>
+        <div class="main">
+            <video muted autoplay loop>
+                <source src="/Lonely/assets/img/homepage.mp4" type="video/mp4">
+            </video>
+            <div id="clock">
+                <span class="hour">hh</span><span class="min">mm</span><span class="sec">ss</span>
+            </div>
+        </div>
+        <script>
+            let timer;
+        const clock = document.querySelector("#clock");
+
+        function start(){
+            if(!timer){
+                timer = setInterval(update, 1000);
+                update();
+            }
+        }
+        function update(){
+			let date = new Date();
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+			clock.children[0].textContent = hour < 10 ? '0' + hour : hour;
+            clock.children[1].textContent = min < 10 ? '0' + min : min;
+			clock.children[2].textContent = sec < 10 ? '0' + sec : sec;
+		}
+        start(); update();
+        </script>
+    </body>
+</html>
