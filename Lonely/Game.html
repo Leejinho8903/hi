@@ -15,20 +15,12 @@
         <div class="hp-bar">
             <div id="hbar" class="hp-bar-inner" style="width: 100%;"></div>
           </div>
-          <div class="user-hp">
-            <div class="userhp-bar" style="width: 100%;"></monster></div>
-          </div>
         <button id="fire" onclick="fire()">공격</button>
-        <button id="wind" onclick="wind()">방</button>
+
 
         <div class="User" style="width: 100%;"></div>    
     
         <script>
-            let user = {
-                name : "user",
-                hp : 100
-            };
-
             let monster = {
                 name : "슬라임",
                 hp : 100,
@@ -36,6 +28,7 @@
             };
 
             function fire(){
+                const button = document.getElementById('fire');
                 let damage = Math.floor(Math.random() * 21);
                 monster.hp -= damage;
                 const hpBar = document.querySelector("#hbar");
@@ -44,6 +37,8 @@
                 if(monster.hp <= 0){
                     hpBar.style.width = '0%';
                     alert('몬스터를 처지하셨습니다!');
+                } else if(monster.attack === 17){
+                    setTimeout(function(){ button.disabled = false}, 30000);
                 } else {
                     hpBar.style.width = monster.hp + '%';
                     alert(`${damage}만큼의 데미지를 주셨습니다!`);
@@ -54,13 +49,8 @@
                 } else if(monster.hp <= 70){
                     hpBar.style.backgroundColor = 'orange';
                 }
-
-                user.hp -= monster.attack;
+                
             };
-
-            function wind(){
-
-            }
 
             
         </script>
